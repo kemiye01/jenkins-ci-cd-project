@@ -13,8 +13,7 @@ pipeline {
            }
         stage('Deploy') {
             steps {
-               sh "chmod 755 /var/lib/jenkins/workspace/cd-proj/target/webapp-0.2.war"
-               sh "StrictHostKeyChecking=no /var/lib/jenkins/workspace/cd-proj/target/*webapp-0.2.war centos@35.87.24.39:/home/centos/opt/tomcat/"
+               sh "StrictHostKeyChecking=no /var/lib/jenkins/workspace/cd-proj/target/webapp-0.2.war centos@35.87.24.39:/home/centos/opt/tomcat/"
             }
         }
     }
