@@ -13,7 +13,7 @@ pipeline {
            }
         stage('Deploy') {
             steps {
-               tomcatDeploy "credentialsId: 'fd8d3032-79c2-4114-9fd3-4ad013e0f0f4', war: '**/target/*webapp-0.2.war centos@35.87.24.39:/home/centos/opt/tomcat/"
+               sh "StrictHostKeyChecking=no credentialsId: 'fd8d3032-79c2-4114-9fd3-4ad013e0f0f4', war: '**/target/*webapp-0.2.war centos@35.87.24.39:/home/centos/opt/tomcat/"
             }
         }
     }
