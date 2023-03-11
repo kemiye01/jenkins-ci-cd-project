@@ -17,7 +17,8 @@ pipeline {
         stage('deploy') {
             steps {
                 echo 'Deploying....'
-                    sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/cd-proj/target/webapp-0.2.war centos@172.31.16.104:/home/centos/opt/tomcat"
+                sh 'chmod 400 ./jen.pem'
+                sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/cd-proj/target/webapp-0.2.war centos@35.87.24.39:/home/centos/opt/tomcat"
             }
         }
     }
