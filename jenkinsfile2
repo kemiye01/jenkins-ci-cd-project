@@ -19,7 +19,7 @@ pipeline {
             echo 'Deploying....' 
             sh "chmod 400 jen.pem"
                 sshagent(['deploy']) { 
-                sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/ci-cd-proj/target/webapp-0.2.war centos@ 54.203.0.0:/opt/tomcat/webapps"
+                sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/ci-cd-proj/target/webapp-0.2.war centos@54.203.0.0:/opt/tomcat/webapps"
                  }
             }
         }
